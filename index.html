@@ -123,7 +123,15 @@
       box-shadow: 0 24px 70px rgba(26,159,160,0.45), 0 0 0 14px rgba(26,159,160,0.08);
       position: relative; z-index: 2; overflow: hidden;
     }
-    /* Logo texto (reemplazar con <img src="logo.png"> cuando esté listo) */
+
+    .hero-logo-img {
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    /* Logo texto */
     .logo-letters {
       font-family: 'Cormorant Garamond', serif;
       font-size: 5.5rem; font-weight: 700; color: #fff;
@@ -342,22 +350,18 @@
     </div>
   </div>
 
-  <!--
-    LOGO CIRCULAR
-    Cuando tengas el logo como imagen, reemplazá el contenido de .hero-logo-circle por:
-      <img src="logo.png" style="width:85%;height:85%;object-fit:contain;">
-  -->
+  <!-- LOGO CIRCULAR -->
   <div class="hero-img-wrap">
     <div class="hero-logo-ring">
       <div class="orbit-dot orbit-dot-1"></div>
       <div class="orbit-dot orbit-dot-2"></div>
       <div class="orbit-dot orbit-dot-3"></div>
+
       <div class="hero-logo-circle">
-        <div class="hero-logo-circle">
-  <img src="Logo monograma despacho contable formal blanco y negro_20260514_201846_0000.png" alt="Logo HB Estudio Contable" class="hero-logo-img">
-</div>
+        <img src="Logo monograma despacho contable formal blanco y negro_20260514_201846_0000.png" alt="Logo HB Estudio Contable" class="hero-logo-img">
       </div>
     </div>
+
     <div class="hero-stat-card top-left">
       <div class="stat-icon">📋</div>
       <div>
@@ -472,10 +476,6 @@
         <div class="promo-card-body">
           <div class="promo-discount">20%</div>
           <div class="promo-discount-label">de descuento en liquidación de IVA</div>
-          <!--
-            Cuando tengas la captura de la publicación, reemplazá el bloque .promo-img-slot por:
-            <img src="promo-lunes.jpg" class="promo-img" alt="Promo lunes">
-          -->
           <div class="promo-img-slot">
             <span>📸</span>
             <p>Imagen de la publicación<br>próximamente</p>
@@ -497,9 +497,6 @@
         <div class="promo-card-body">
           <div class="promo-discount">15%</div>
           <div class="promo-discount-label">de descuento en apertura de RUC</div>
-          <!--
-            <img src="promo-miercoles.jpg" class="promo-img" alt="Promo miércoles">
-          -->
           <div class="promo-img-slot">
             <span>📸</span>
             <p>Imagen de la publicación<br>próximamente</p>
@@ -521,9 +518,6 @@
         <div class="promo-card-body">
           <div class="promo-discount">1er mes</div>
           <div class="promo-discount-label">gratis en carga RG 90</div>
-          <!--
-            <img src="promo-viernes.jpg" class="promo-img" alt="Promo viernes">
-          -->
           <div class="promo-img-slot">
             <span>📸</span>
             <p>Imagen de la publicación<br>próximamente</p>
