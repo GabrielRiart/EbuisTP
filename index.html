@@ -17,18 +17,12 @@
       --text:       #1a2b2b;
       --muted:      #5a7070;
       --accent:     #0d6b6c;
+      --gold:       #e6a817;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--text);
-      background: var(--white);
-      overflow-x: hidden;
-    }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
 
     /* ── NAV ── */
     nav {
@@ -41,439 +35,259 @@
       transition: box-shadow 0.3s;
     }
     nav.scrolled { box-shadow: 0 2px 20px rgba(26,159,160,0.12); }
-
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 700;
-      color: var(--teal-dark);
-      letter-spacing: -0.5px;
-    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--teal-dark); letter-spacing: -0.5px; }
     .nav-logo span { color: var(--teal); }
-
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      font-size: 0.9rem; font-weight: 500;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
+    .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color 0.2s; }
     .nav-links a:hover { color: var(--teal); }
-
-    .nav-cta {
-      background: var(--teal);
-      color: var(--white) !important;
-      padding: 0.55rem 1.4rem;
-      border-radius: 100px;
-      transition: background 0.2s !important;
-    }
-    .nav-cta:hover { background: var(--teal-dark) !important; color: var(--white) !important; }
-
-    /* hamburger */
+    .nav-cta { background: var(--teal); color: var(--white) !important; padding: 0.55rem 1.4rem; border-radius: 100px; transition: background 0.2s !important; }
+    .nav-cta:hover { background: var(--teal-dark) !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--teal-dark); border-radius: 2px; transition: 0.3s; }
 
     /* ── HERO ── */
     #hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 7rem 2.5rem 4rem;
-      gap: 3rem;
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; padding: 7rem 2.5rem 4rem; gap: 3rem;
       background: linear-gradient(135deg, var(--white) 55%, var(--teal-light) 100%);
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-
     #hero::before {
-      content: '';
-      position: absolute; bottom: -80px; right: -80px;
-      width: 400px; height: 400px;
-      border-radius: 50%;
+      content: ''; position: absolute; bottom: -80px; right: -80px;
+      width: 400px; height: 400px; border-radius: 50%;
       background: radial-gradient(circle, rgba(26,159,160,0.15) 0%, transparent 70%);
     }
-
     .hero-text { max-width: 560px; }
-
     .hero-badge {
-      display: inline-block;
-      background: var(--teal-light);
-      color: var(--teal-dark);
-      font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      padding: 0.4rem 1rem;
-      border-radius: 100px;
-      margin-bottom: 1.5rem;
+      display: inline-block; background: var(--teal-light); color: var(--teal-dark);
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 1.5rem;
       border: 1px solid rgba(26,159,160,0.25);
-      opacity: 0; transform: translateY(16px);
-      animation: fadeUp 0.6s 0.1s forwards;
+      opacity: 0; transform: translateY(16px); animation: fadeUp 0.6s 0.1s forwards;
     }
-
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--text);
-      margin-bottom: 1.2rem;
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.6s 0.2s forwards;
+      font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 700; line-height: 1.1;
+      color: var(--text); margin-bottom: 1.2rem;
+      opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s 0.2s forwards;
     }
     .hero-title em { color: var(--teal); font-style: normal; }
-
     .hero-sub {
-      font-size: 1.05rem; color: var(--muted);
-      line-height: 1.7; margin-bottom: 2.2rem;
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.6s 0.35s forwards;
+      font-size: 1.05rem; color: var(--muted); line-height: 1.7; margin-bottom: 2.2rem;
+      opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s 0.35s forwards;
     }
-
     .hero-btns {
       display: flex; gap: 1rem; flex-wrap: wrap;
-      opacity: 0; transform: translateY(20px);
-      animation: fadeUp 0.6s 0.5s forwards;
+      opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s 0.5s forwards;
     }
-
     .btn-primary {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--teal);
-      color: var(--white);
-      padding: 0.85rem 2rem;
-      border-radius: 100px;
-      text-decoration: none;
-      font-weight: 600; font-size: 0.95rem;
+      background: var(--teal); color: var(--white); padding: 0.85rem 2rem;
+      border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.95rem;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 20px rgba(26,159,160,0.35);
     }
-    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,159,160,0.4); }
-
+    .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 0.5rem;
-      background: transparent;
-      color: var(--teal-dark);
-      padding: 0.85rem 2rem;
-      border-radius: 100px;
-      text-decoration: none;
-      font-weight: 600; font-size: 0.95rem;
-      border: 2px solid var(--teal);
-      transition: background 0.2s, color 0.2s;
+      background: transparent; color: var(--teal-dark); padding: 0.85rem 2rem;
+      border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      border: 2px solid var(--teal); transition: background 0.2s;
     }
     .btn-secondary:hover { background: var(--teal-light); }
 
-    /* hero image side */
+    /* ── HERO LOGO CIRCULAR ── */
     .hero-img-wrap {
-      position: relative;
-      display: flex; justify-content: center; align-items: center;
-      opacity: 0; transform: scale(0.95);
-      animation: fadeIn 0.8s 0.4s forwards;
+      position: relative; display: flex; justify-content: center; align-items: center;
+      opacity: 0; transform: scale(0.95); animation: fadeIn 0.8s 0.4s forwards;
     }
-
-    .hero-img-blob {
-      width: min(460px, 100%);
-      aspect-ratio: 1;
-      border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
-      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    .hero-logo-ring {
+      position: relative; width: min(420px, 100%); aspect-ratio: 1;
       display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(26,159,160,0.3);
+    }
+    .hero-logo-ring::before, .hero-logo-ring::after {
+      content: ''; position: absolute; border-radius: 50%;
+      border: 2px dashed rgba(26,159,160,0.25); inset: 0;
+      animation: spinRing 20s linear infinite;
+    }
+    .hero-logo-ring::after {
+      inset: 28px; border-color: rgba(26,159,160,0.15);
+      animation-duration: 14s; animation-direction: reverse;
+    }
+    @keyframes spinRing { to { transform: rotate(360deg); } }
+
+    .hero-logo-circle {
+      width: 280px; height: 280px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: 0 24px 70px rgba(26,159,160,0.45), 0 0 0 14px rgba(26,159,160,0.08);
+      position: relative; z-index: 2; overflow: hidden;
+    }
+    /* Logo texto (reemplazar con <img src="logo.png"> cuando esté listo) */
+    .logo-letters {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5.5rem; font-weight: 700; color: #fff;
+      line-height: 1; letter-spacing: -4px;
+    }
+    .logo-sub {
+      font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.65);
+      margin-top: 0.4rem;
     }
 
-    .hero-img-blob img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      mix-blend-mode: luminosity;
-      opacity: 0.85;
-    }
+    .orbit-dot { position: absolute; border-radius: 50%; z-index: 3; }
+    .orbit-dot-1 { width: 14px; height: 14px; background: var(--gold); top: 6%; left: 50%; transform: translateX(-50%); box-shadow: 0 0 12px rgba(230,168,23,0.5); }
+    .orbit-dot-2 { width: 10px; height: 10px; background: var(--teal-light); border: 2px solid var(--teal); bottom: 8%; right: 14%; }
+    .orbit-dot-3 { width: 8px; height: 8px; background: rgba(26,159,160,0.4); top: 30%; left: 4%; }
 
     .hero-stat-card {
-      position: absolute;
-      background: var(--white);
-      border-radius: 16px;
-      padding: 1rem 1.4rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      position: absolute; background: var(--white); border-radius: 16px;
+      padding: 1rem 1.4rem; box-shadow: 0 8px 30px rgba(0,0,0,0.12);
       display: flex; align-items: center; gap: 0.75rem;
     }
-    .hero-stat-card.top-left { top: 10%; left: -5%; }
+    .hero-stat-card.top-left    { top: 10%; left: -5%; }
     .hero-stat-card.bottom-right { bottom: 10%; right: -5%; }
-
-    .stat-icon {
-      width: 42px; height: 42px;
-      background: var(--teal-light);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-    }
+    .stat-icon { width: 42px; height: 42px; background: var(--teal-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
     .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--teal-dark); line-height: 1; }
     .stat-lbl { font-size: 0.72rem; color: var(--muted); font-weight: 500; }
 
     /* ── SECTION COMMON ── */
     section { padding: 5rem 2.5rem; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
-
-    .section-label {
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--teal);
-      margin-bottom: 0.6rem;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700; color: var(--text); line-height: 1.15;
-      margin-bottom: 1rem;
-    }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text); line-height: 1.15; margin-bottom: 1rem; }
     .section-sub { font-size: 1rem; color: var(--muted); max-width: 540px; line-height: 1.7; }
 
     /* ── SERVICIOS ── */
     #servicios { background: var(--off-white); }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .service-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 2rem;
-      border: 1px solid rgba(26,159,160,0.1);
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-      cursor: default;
-    }
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(26,159,160,0.15);
-      border-color: var(--teal);
-    }
-    .service-icon {
-      width: 52px; height: 52px;
-      background: linear-gradient(135deg, var(--teal-light), #c2eded);
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 1.2rem;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .service-card { background: var(--white); border-radius: 20px; padding: 2rem; border: 1px solid rgba(26,159,160,0.1); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; cursor: default; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,159,160,0.15); border-color: var(--teal); }
+    .service-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--teal-light), #c2eded); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.2rem; }
     .service-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
     .service-list { list-style: none; }
-    .service-list li {
-      font-size: 0.88rem; color: var(--muted); padding: 0.3rem 0;
-      display: flex; align-items: flex-start; gap: 0.5rem;
-    }
+    .service-list li { font-size: 0.88rem; color: var(--muted); padding: 0.3rem 0; display: flex; align-items: flex-start; gap: 0.5rem; }
     .service-list li::before { content: '·'; color: var(--teal); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-    /* highlight tags */
-    .tag {
-      display: inline-block;
-      background: var(--teal); color: var(--white);
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px;
-      padding: 0.2rem 0.55rem; border-radius: 6px; margin-left: 4px;
-    }
+    .tag { display: inline-block; background: var(--teal); color: var(--white); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px; padding: 0.2rem 0.55rem; border-radius: 6px; margin-left: 4px; }
 
     /* ── MUNICIPALIDAD ── */
     #municipalidad { background: var(--white); }
-
-    .muni-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      margin-top: 3rem;
-    }
-
+    .muni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem; }
     .muni-list { display: flex; flex-direction: column; gap: 0.75rem; }
-
-    .muni-item {
-      display: flex; align-items: center; gap: 1rem;
-      padding: 0.9rem 1.2rem;
-      border-radius: 14px;
-      background: var(--off-white);
-      border-left: 4px solid var(--teal);
-      font-weight: 500; font-size: 0.95rem;
-      transition: background 0.2s;
-    }
+    .muni-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem; border-radius: 14px; background: var(--off-white); border-left: 4px solid var(--teal); font-weight: 500; font-size: 0.95rem; transition: background 0.2s; }
     .muni-item:hover { background: var(--teal-light); }
     .muni-item .m-icon { font-size: 1.2rem; }
-
-    .muni-highlight {
-      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
-      border-radius: 28px;
-      padding: 3rem 2.5rem;
-      color: var(--white);
-      text-align: center;
-    }
-    .muni-highlight h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem;
-    }
+    .muni-highlight { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); border-radius: 28px; padding: 3rem 2.5rem; color: var(--white); text-align: center; }
+    .muni-highlight h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
     .muni-highlight p { opacity: 0.85; font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.8rem; }
-    .muni-highlight a {
-      display: inline-block;
-      background: var(--white);
-      color: var(--teal-dark);
-      padding: 0.75rem 2rem;
-      border-radius: 100px;
-      text-decoration: none;
-      font-weight: 700; font-size: 0.9rem;
-      transition: transform 0.2s;
-    }
+    .muni-highlight a { display: inline-block; background: var(--white); color: var(--teal-dark); padding: 0.75rem 2rem; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: transform 0.2s; }
     .muni-highlight a:hover { transform: scale(1.04); }
 
-    /* ── ABOUT / NOSOTROS ── */
-    #nosotros { background: var(--off-white); }
+    /* ── PROMOCIONES ── */
+    #promociones { background: var(--off-white); }
+    .promo-header { text-align: center; margin-bottom: 1rem; }
+    .promo-header .section-sub { margin: 0 auto; }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      margin-top: 3rem;
-    }
+    .promo-days { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
 
-    .profile-card {
-      background: var(--white);
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(26,159,160,0.12);
+    .promo-card {
+      background: var(--white); border-radius: 24px; overflow: hidden;
+      border: 1px solid rgba(26,159,160,0.12);
+      transition: transform 0.25s, box-shadow 0.25s; position: relative;
     }
-    .profile-card-top {
+    .promo-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,159,160,0.15); }
+
+    .promo-day-banner {
       background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
-      padding: 2.5rem;
-      text-align: center;
-      color: var(--white);
+      padding: 1.5rem; text-align: center;
     }
-    .profile-avatar {
-      width: 90px; height: 90px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem;
-      margin: 0 auto 1rem;
-      border: 3px solid rgba(255,255,255,0.4);
+    .promo-day-name { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; color: #fff; }
+    .promo-day-badge {
+      display: inline-block; background: var(--gold); color: #fff;
+      font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.8rem;
+      border-radius: 100px; margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;
     }
+
+    .promo-card-body { padding: 1.6rem; }
+    .promo-discount { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--teal); line-height: 1; }
+    .promo-discount-label { font-size: 0.82rem; color: var(--muted); font-weight: 500; margin-bottom: 1.2rem; }
+
+    /* Placeholder para la captura de pantalla de la publicación */
+    .promo-img-slot {
+      width: 100%; height: 140px; border-radius: 14px;
+      background: var(--teal-light);
+      border: 2px dashed rgba(26,159,160,0.35);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.4rem; margin-bottom: 1.2rem;
+    }
+    .promo-img-slot span { font-size: 1.8rem; }
+    .promo-img-slot p { font-size: 0.7rem; color: var(--muted); text-align: center; padding: 0 0.8rem; line-height: 1.4; }
+    /* Cuando tengan la imagen: <img src="promo-lunes.jpg" class="promo-img"> */
+    .promo-img { width: 100%; height: 140px; object-fit: cover; border-radius: 14px; margin-bottom: 1.2rem; }
+
+    .promo-service-name { font-weight: 700; font-size: 0.98rem; color: var(--text); margin-bottom: 0.35rem; }
+    .promo-service-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin-bottom: 1.2rem; }
+
+    .btn-promo-wa {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background: #25D366; color: #fff; padding: 0.75rem;
+      border-radius: 12px; text-decoration: none; font-size: 0.88rem; font-weight: 700;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-promo-wa:hover { background: #1db954; transform: translateY(-1px); }
+
+    .promo-note { text-align: center; margin-top: 2rem; font-size: 0.82rem; color: var(--muted); }
+    .promo-note strong { color: var(--teal-dark); }
+
+    /* ── NOSOTROS ── */
+    #nosotros { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem; }
+    .profile-card { background: var(--white); border-radius: 28px; overflow: hidden; box-shadow: 0 12px 40px rgba(26,159,160,0.12); }
+    .profile-card-top { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); padding: 2.5rem; text-align: center; color: var(--white); }
+    .profile-avatar { width: 90px; height: 90px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1rem; border: 3px solid rgba(255,255,255,0.4); }
     .profile-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; }
     .profile-role { font-size: 0.85rem; opacity: 0.85; margin-top: 0.3rem; }
-
     .profile-card-body { padding: 1.8rem 2rem; }
     .profile-data { display: flex; flex-direction: column; gap: 0.75rem; }
-    .profile-row {
-      display: flex; align-items: flex-start; gap: 0.75rem;
-      font-size: 0.88rem; color: var(--muted);
-    }
+    .profile-row { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.88rem; color: var(--muted); }
     .profile-row strong { color: var(--text); font-weight: 600; min-width: 80px; }
-
-    .about-text { }
     .about-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; }
     .about-text p { font-size: 0.97rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
-
     .values-list { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
     .value-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; font-weight: 500; }
     .value-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 
     /* ── CONTACTO ── */
-    #contacto {
-      background: linear-gradient(135deg, var(--teal-dark) 0%, #0a5252 100%);
-      color: var(--white);
-    }
+    #contacto { background: linear-gradient(135deg, var(--teal-dark) 0%, #0a5252 100%); color: var(--white); }
     #contacto .section-label { color: rgba(255,255,255,0.6); }
     #contacto .section-title { color: var(--white); }
     #contacto .section-sub { color: rgba(255,255,255,0.75); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      margin-top: 3rem;
-      align-items: start;
-    }
-
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
     .contact-cards { display: flex; flex-direction: column; gap: 1rem; }
-    .contact-card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 18px;
-      padding: 1.4rem 1.8rem;
-      display: flex; align-items: center; gap: 1rem;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.15);
-      text-decoration: none;
-      color: var(--white);
-      transition: background 0.2s, transform 0.2s;
-    }
+    .contact-card { background: rgba(255,255,255,0.1); border-radius: 18px; padding: 1.4rem 1.8rem; display: flex; align-items: center; gap: 1rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); text-decoration: none; color: var(--white); transition: background 0.2s, transform 0.2s; }
     .contact-card:hover { background: rgba(255,255,255,0.18); transform: translateX(4px); }
     .contact-card-icon { font-size: 1.8rem; }
     .contact-card-label { font-size: 0.75rem; opacity: 0.7; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
     .contact-card-value { font-size: 1.05rem; font-weight: 600; }
-
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
     .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
     .form-field label { font-size: 0.82rem; font-weight: 600; opacity: 0.8; }
-    .form-field input,
-    .form-field textarea {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 12px;
-      padding: 0.9rem 1.1rem;
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s;
-      resize: vertical;
-    }
-    .form-field input::placeholder,
-    .form-field textarea::placeholder { color: rgba(255,255,255,0.45); }
-    .form-field input:focus,
-    .form-field textarea:focus { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.18); }
-
-    .form-submit {
-      background: var(--white);
-      color: var(--teal-dark);
-      border: none;
-      padding: 0.9rem 2rem;
-      border-radius: 100px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem; font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      align-self: flex-start;
-    }
+    .form-field input, .form-field textarea { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 0.9rem 1.1rem; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s, background 0.2s; resize: vertical; }
+    .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.45); }
+    .form-field input:focus, .form-field textarea:focus { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.18); }
+    .form-submit { background: var(--white); color: var(--teal-dark); border: none; padding: 0.9rem 2rem; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.2); align-self: flex-start; }
     .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
-
-    .toast {
-      display: none;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 12px;
-      padding: 0.8rem 1.2rem;
-      font-size: 0.9rem;
-      color: var(--white);
-    }
+    .toast { display: none; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.8rem 1.2rem; font-size: 0.9rem; color: var(--white); }
     .toast.show { display: block; }
 
     /* ── FOOTER ── */
-    footer {
-      background: #072020;
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 1.8rem 2rem;
-      font-size: 0.82rem;
-    }
+    footer { background: #072020; color: rgba(255,255,255,0.5); text-align: center; padding: 1.8rem 2rem; font-size: 0.82rem; }
     footer strong { color: rgba(255,255,255,0.8); }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* intersection observer fade */
-    .reveal {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn  { to { opacity: 1; transform: scale(1); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
@@ -481,15 +295,17 @@
       #hero { grid-template-columns: 1fr; text-align: center; }
       .hero-btns { justify-content: center; }
       .hero-img-wrap { order: -1; }
-      .hero-img-blob { width: min(300px, 80vw); }
-      .hero-stat-card.top-left { top: 5%; left: 0; }
-      .hero-stat-card.bottom-right { bottom: 5%; right: 0; }
+      .hero-logo-ring { width: min(280px, 75vw); }
+      .hero-logo-circle { width: 200px; height: 200px; }
+      .logo-letters { font-size: 4rem; }
+      .hero-stat-card.top-left { top: 2%; left: 2%; }
+      .hero-stat-card.bottom-right { bottom: 2%; right: 2%; }
       .muni-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .promo-days { grid-template-columns: 1fr; }
       .nav-links { display: none; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; background: var(--white); padding: 1.5rem 2rem; border-bottom: 1px solid var(--teal-light); gap: 1.2rem; }
       .nav-links.open { display: flex; }
       .hamburger { display: flex; }
     }
-
     @media (max-width: 600px) {
       section { padding: 4rem 1.2rem; }
       nav { padding: 1rem 1.2rem; }
@@ -505,6 +321,7 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#municipalidad">Municipalidad</a></li>
+    <li><a href="#promociones">Promociones</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
     <li><a href="#contacto" class="nav-cta">Contacto</a></li>
   </ul>
@@ -517,21 +334,28 @@
 <section id="hero">
   <div class="hero-text">
     <span class="hero-badge">Asesoría Contable Profesional</span>
-    <h1 class="hero-title">
-      Tu contabilidad,<br><em>en buenas manos</em>
-    </h1>
-    <p class="hero-sub">
-      Somos HB Estudio Contable, con sede en Villa Elisa. Ofrecemos servicios de liquidación impositiva, consultoría integral y gestiones municipales para que tu negocio crezca sin preocupaciones.
-    </p>
+    <h1 class="hero-title">Tu contabilidad,<br><em>en buenas manos</em></h1>
+    <p class="hero-sub">Somos HB Estudio Contable, con sede en Villa Elisa. Ofrecemos servicios de liquidación impositiva, consultoría integral y gestiones municipales para que tu negocio crezca sin preocupaciones.</p>
     <div class="hero-btns">
       <a href="#contacto" class="btn-primary">📞 Consultá gratis</a>
       <a href="#servicios" class="btn-secondary">Ver servicios →</a>
     </div>
   </div>
 
+  <!--
+    LOGO CIRCULAR
+    Cuando tengas el logo como imagen, reemplazá el contenido de .hero-logo-circle por:
+      <img src="logo.png" style="width:85%;height:85%;object-fit:contain;">
+  -->
   <div class="hero-img-wrap">
-    <div class="hero-img-blob">
-      <img src="Consultant__2_.jpg" alt="Herenia Bruno – Contadora" />
+    <div class="hero-logo-ring">
+      <div class="orbit-dot orbit-dot-1"></div>
+      <div class="orbit-dot orbit-dot-2"></div>
+      <div class="orbit-dot orbit-dot-3"></div>
+      <div class="hero-logo-circle">
+        <div class="logo-letters">HB</div>
+        <div class="logo-sub">Estudio Contable</div>
+      </div>
     </div>
     <div class="hero-stat-card top-left">
       <div class="stat-icon">📋</div>
@@ -556,7 +380,6 @@
     <p class="section-label reveal">Lo que hacemos</p>
     <h2 class="section-title reveal">Nuestros servicios</h2>
     <p class="section-sub reveal">Soluciones contables completas para empresas, emprendedores y profesionales en Paraguay.</p>
-
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon">💰</div>
@@ -567,7 +390,6 @@
           <li><strong>IRP</strong> – Impuesto a la Renta Personal</li>
         </ul>
       </div>
-
       <div class="service-card reveal">
         <div class="service-icon">📂</div>
         <div class="service-title">RG 90 – Carga de Documentos</div>
@@ -577,7 +399,6 @@
           <li>Cumplimiento ante la SET</li>
         </ul>
       </div>
-
       <div class="service-card reveal">
         <div class="service-icon">🏢</div>
         <div class="service-title">Apertura y Cancelación de RUC</div>
@@ -588,7 +409,6 @@
           <li><span class="tag">OSFL</span> Organización Sin Fines de Lucro</li>
         </ul>
       </div>
-
       <div class="service-card reveal">
         <div class="service-icon">🔍</div>
         <div class="service-title">Consultoría Contable Integral</div>
@@ -621,7 +441,6 @@
           <div class="muni-item reveal"><span class="m-icon">💳</span> Tasas Especiales</div>
         </div>
       </div>
-
       <div class="muni-highlight reveal">
         <div style="font-size:3rem;margin-bottom:1rem;">🏛️</div>
         <h3>Sin vueltas, sin esperas</h3>
@@ -629,6 +448,95 @@
         <a href="#contacto">Consultá sin costo →</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PROMOCIONES -->
+<section id="promociones">
+  <div class="section-inner">
+    <div class="promo-header">
+      <p class="section-label reveal">Ofertas semanales</p>
+      <h2 class="section-title reveal">Promociones especiales</h2>
+      <p class="section-sub reveal">Cada semana tenemos descuentos en servicios puntuales. ¡Aprovechá el día que más te convenga!</p>
+    </div>
+
+    <div class="promo-days">
+
+      <!-- LUNES -->
+      <div class="promo-card reveal">
+        <div class="promo-day-banner">
+          <div class="promo-day-name">Lunes</div>
+          <div class="promo-day-badge">✨ Promo del día</div>
+        </div>
+        <div class="promo-card-body">
+          <div class="promo-discount">20%</div>
+          <div class="promo-discount-label">de descuento en liquidación de IVA</div>
+          <!--
+            Cuando tengas la captura de la publicación, reemplazá el bloque .promo-img-slot por:
+            <img src="promo-lunes.jpg" class="promo-img" alt="Promo lunes">
+          -->
+          <div class="promo-img-slot">
+            <span>📸</span>
+            <p>Imagen de la publicación<br>próximamente</p>
+          </div>
+          <div class="promo-service-name">Liquidación de IVA mensual</div>
+          <div class="promo-service-desc">Presentá tu documentación los lunes y obtené un 20% de descuento en la liquidación de tu IVA del mes.</div>
+          <a href="https://wa.me/595971300059?text=Hola%20Herenia%2C%20quiero%20aprovechar%20la%20promo%20del%20lunes%20-%2020%25%20off%20en%20liquidaci%C3%B3n%20de%20IVA." class="btn-promo-wa" target="_blank">
+            💬 Quiero esta promo
+          </a>
+        </div>
+      </div>
+
+      <!-- MIÉRCOLES -->
+      <div class="promo-card reveal">
+        <div class="promo-day-banner">
+          <div class="promo-day-name">Miércoles</div>
+          <div class="promo-day-badge">⭐ Promo del día</div>
+        </div>
+        <div class="promo-card-body">
+          <div class="promo-discount">15%</div>
+          <div class="promo-discount-label">de descuento en apertura de RUC</div>
+          <!--
+            <img src="promo-miercoles.jpg" class="promo-img" alt="Promo miércoles">
+          -->
+          <div class="promo-img-slot">
+            <span>📸</span>
+            <p>Imagen de la publicación<br>próximamente</p>
+          </div>
+          <div class="promo-service-name">Apertura de RUC</div>
+          <div class="promo-service-desc">Iniciá los trámites de apertura de tu RUC un miércoles y te hacemos un 15% de descuento en el servicio.</div>
+          <a href="https://wa.me/595971300059?text=Hola%20Herenia%2C%20quiero%20aprovechar%20la%20promo%20del%20mi%C3%A9rcoles%20-%2015%25%20off%20en%20apertura%20de%20RUC." class="btn-promo-wa" target="_blank">
+            💬 Quiero esta promo
+          </a>
+        </div>
+      </div>
+
+      <!-- VIERNES -->
+      <div class="promo-card reveal">
+        <div class="promo-day-banner">
+          <div class="promo-day-name">Viernes</div>
+          <div class="promo-day-badge">🔥 Promo del día</div>
+        </div>
+        <div class="promo-card-body">
+          <div class="promo-discount">1er mes</div>
+          <div class="promo-discount-label">gratis en carga RG 90</div>
+          <!--
+            <img src="promo-viernes.jpg" class="promo-img" alt="Promo viernes">
+          -->
+          <div class="promo-img-slot">
+            <span>📸</span>
+            <p>Imagen de la publicación<br>próximamente</p>
+          </div>
+          <div class="promo-service-name">Carga RG 90 – Primer mes gratis</div>
+          <div class="promo-service-desc">Clientes nuevos que contraten la carga RG 90 un viernes acceden al primer mes del servicio sin costo.</div>
+          <a href="https://wa.me/595971300059?text=Hola%20Herenia%2C%20quiero%20aprovechar%20la%20promo%20del%20viernes%20-%20primer%20mes%20gratis%20en%20RG%2090." class="btn-promo-wa" target="_blank">
+            💬 Quiero esta promo
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <p class="promo-note reveal">Promociones sujetas a disponibilidad. <strong>Consultá por WhatsApp antes de venir.</strong></p>
   </div>
 </section>
 
@@ -646,26 +554,13 @@
         </div>
         <div class="profile-card-body">
           <div class="profile-data">
-            <div class="profile-row">
-              <strong>📍 Sede</strong>
-              <span>Cedro 296 esq. Curupay, Villa Elisa</span>
-            </div>
-            <div class="profile-row">
-              <strong>📞 Teléfono</strong>
-              <span>0971-300-059</span>
-            </div>
-            <div class="profile-row">
-              <strong>✉️ Email</strong>
-              <span>herenia_67@hotmail.com</span>
-            </div>
-            <div class="profile-row">
-              <strong>🎂 Desde</strong>
-              <span>Asunción, 08/03/1967</span>
-            </div>
+            <div class="profile-row"><strong>📍 Sede</strong><span>Cedro 296 esq. Curupay, Villa Elisa</span></div>
+            <div class="profile-row"><strong>📞 Teléfono</strong><span>0971-300-059</span></div>
+            <div class="profile-row"><strong>✉️ Email</strong><span>herenia_67@hotmail.com</span></div>
+            <div class="profile-row"><strong>🎂 Desde</strong><span>Asunción, 08/03/1967</span></div>
           </div>
         </div>
       </div>
-
       <div class="about-text reveal">
         <h3>Contabilidad con vocación de servicio</h3>
         <p>HB Estudio Contable nació con la misión de brindar asesoría contable accesible y de alta calidad a empresas y emprendedores de Villa Elisa y alrededores.</p>
@@ -687,7 +582,6 @@
     <p class="section-label reveal">Hablemos</p>
     <h2 class="section-title reveal">Contactanos</h2>
     <p class="section-sub reveal">Estamos en Villa Elisa, listos para atenderte.</p>
-
     <div class="contact-grid">
       <div class="contact-cards reveal">
         <a href="tel:+595971300059" class="contact-card">
@@ -712,7 +606,6 @@
           </div>
         </div>
       </div>
-
       <div class="reveal">
         <div class="contact-form" id="contactForm">
           <div class="form-field">
@@ -742,12 +635,10 @@
 </footer>
 
 <script>
-  // Navbar scroll effect
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
   });
 
-  // Hamburger menu
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
@@ -755,7 +646,6 @@
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
   });
 
-  // Reveal on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
@@ -765,22 +655,19 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // WhatsApp form
   function sendWhatsApp() {
-    const nombre = document.getElementById('fNombre').value.trim();
+    const nombre   = document.getElementById('fNombre').value.trim();
     const contacto = document.getElementById('fContacto').value.trim();
-    const mensaje = document.getElementById('fMensaje').value.trim();
+    const mensaje  = document.getElementById('fMensaje').value.trim();
     if (!mensaje) { alert('Por favor escribí tu consulta.'); return; }
     const text = encodeURIComponent(
       `Hola Herenia! Me contacto desde la página web.\n\n` +
-      (nombre ? `Nombre: ${nombre}\n` : '') +
+      (nombre   ? `Nombre: ${nombre}\n`     : '') +
       (contacto ? `Contacto: ${contacto}\n` : '') +
       `\nConsulta: ${mensaje}`
     );
     document.getElementById('toast').classList.add('show');
-    setTimeout(() => {
-      window.open(`https://wa.me/595971300059?text=${text}`, '_blank');
-    }, 600);
+    setTimeout(() => { window.open(`https://wa.me/595971300059?text=${text}`, '_blank'); }, 600);
   }
 </script>
 </body>
