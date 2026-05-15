@@ -131,7 +131,6 @@
       border-radius: 50%;
     }
 
-    /* Logo texto */
     .logo-letters {
       font-family: 'Cormorant Garamond', serif;
       font-size: 5.5rem; font-weight: 700; color: #fff;
@@ -196,55 +195,129 @@
     .promo-header { text-align: center; margin-bottom: 1rem; }
     .promo-header .section-sub { margin: 0 auto; }
 
-    .promo-days { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .promo-days {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
 
     .promo-card {
-      background: var(--white); border-radius: 24px; overflow: hidden;
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
       border: 1px solid rgba(26,159,160,0.12);
-      transition: transform 0.25s, box-shadow 0.25s; position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
     }
     .promo-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,159,160,0.15); }
 
     .promo-day-banner {
       background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
-      padding: 1.5rem; text-align: center;
+      padding: 1.5rem;
+      text-align: center;
     }
-    .promo-day-name { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 700; color: #fff; }
+    .promo-day-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #fff;
+    }
     .promo-day-badge {
-      display: inline-block; background: var(--gold); color: #fff;
-      font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.8rem;
-      border-radius: 100px; margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px;
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.8rem;
+      border-radius: 100px;
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .promo-card-body { padding: 1.6rem; }
-    .promo-discount { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--teal); line-height: 1; }
-    .promo-discount-label { font-size: 0.82rem; color: var(--muted); font-weight: 500; margin-bottom: 1.2rem; }
+    .promo-discount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .promo-discount-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
 
-    /* Placeholder para la captura de pantalla de la publicación */
     .promo-img-slot {
-      width: 100%; height: 140px; border-radius: 14px;
+      width: 100%;
+      height: 140px;
+      border-radius: 14px;
       background: var(--teal-light);
       border: 2px dashed rgba(26,159,160,0.35);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 0.4rem; margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
     }
     .promo-img-slot span { font-size: 1.8rem; }
-    .promo-img-slot p { font-size: 0.7rem; color: var(--muted); text-align: center; padding: 0 0.8rem; line-height: 1.4; }
-    /* Cuando tengan la imagen: <img src="promo-lunes.jpg" class="promo-img"> */
-    .promo-img { width: 100%; height: 140px; object-fit: cover; border-radius: 14px; margin-bottom: 1.2rem; }
+    .promo-img-slot p {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 0 0.8rem;
+      line-height: 1.4;
+    }
 
-    .promo-service-name { font-weight: 700; font-size: 0.98rem; color: var(--text); margin-bottom: 0.35rem; }
-    .promo-service-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin-bottom: 1.2rem; }
+    .promo-img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 1.2rem;
+      display: block;
+      border: 1px solid rgba(26,159,160,0.12);
+    }
+
+    .promo-service-name {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .promo-service-desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 1.2rem;
+    }
 
     .btn-promo-wa {
-      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      background: #25D366; color: #fff; padding: 0.75rem;
-      border-radius: 12px; text-decoration: none; font-size: 0.88rem; font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: #fff;
+      padding: 0.75rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
       transition: background 0.2s, transform 0.2s;
     }
     .btn-promo-wa:hover { background: #1db954; transform: translateY(-1px); }
 
-    .promo-note { text-align: center; margin-top: 2rem; font-size: 0.82rem; color: var(--muted); }
+    .promo-note {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
     .promo-note strong { color: var(--teal-dark); }
 
     /* ── NOSOTROS ── */
@@ -473,15 +546,16 @@
           <div class="promo-day-name">Lunes</div>
           <div class="promo-day-badge">✨ Promo del día</div>
         </div>
+
         <div class="promo-card-body">
           <div class="promo-discount">20%</div>
           <div class="promo-discount-label">de descuento en liquidación de IVA</div>
-          <div class="promo-img-slot">
-            <span>📸</span>
-            <p>Imagen de la publicación<br>próximamente</p>
-          </div>
+
+          <img src="20%25.png" class="promo-img" alt="Promo lunes - Liquidación de IVA">
+
           <div class="promo-service-name">Liquidación de IVA mensual</div>
           <div class="promo-service-desc">Presentá tu documentación los lunes y obtené un 20% de descuento en la liquidación de tu IVA del mes.</div>
+
           <a href="https://wa.me/595971300059?text=Hola%20Herenia%2C%20quiero%20aprovechar%20la%20promo%20del%20lunes%20-%2020%25%20off%20en%20liquidaci%C3%B3n%20de%20IVA." class="btn-promo-wa" target="_blank">
             💬 Quiero esta promo
           </a>
@@ -494,15 +568,16 @@
           <div class="promo-day-name">Miércoles</div>
           <div class="promo-day-badge">⭐ Promo del día</div>
         </div>
+
         <div class="promo-card-body">
           <div class="promo-discount">15%</div>
           <div class="promo-discount-label">de descuento en apertura de RUC</div>
-          <div class="promo-img-slot">
-            <span>📸</span>
-            <p>Imagen de la publicación<br>próximamente</p>
-          </div>
+
+          <img src="15%25.png" class="promo-img" alt="Promo miércoles - Apertura de RUC">
+
           <div class="promo-service-name">Apertura de RUC</div>
           <div class="promo-service-desc">Iniciá los trámites de apertura de tu RUC un miércoles y te hacemos un 15% de descuento en el servicio.</div>
+
           <a href="https://wa.me/595971300059?text=Hola%20Herenia%2C%20quiero%20aprovechar%20la%20promo%20del%20mi%C3%A9rcoles%20-%2015%25%20off%20en%20apertura%20de%20RUC." class="btn-promo-wa" target="_blank">
             💬 Quiero esta promo
           </a>
@@ -515,15 +590,16 @@
           <div class="promo-day-name">Viernes</div>
           <div class="promo-day-badge">🔥 Promo del día</div>
         </div>
+
         <div class="promo-card-body">
           <div class="promo-discount">1er mes</div>
           <div class="promo-discount-label">gratis en carga RG 90</div>
-          <div class="promo-img-slot">
-            <span>📸</span>
-            <p>Imagen de la publicación<br>próximamente</p>
-          </div>
+
+          <img src="PrimerMes.png" class="promo-img" alt="Promo viernes - Carga RG 90">
+
           <div class="promo-service-name">Carga RG 90 – Primer mes gratis</div>
           <div class="promo-service-desc">Clientes nuevos que contraten la carga RG 90 un viernes acceden al primer mes del servicio sin costo.</div>
+
           <a href="https://wa.me/595971300059?text=Hola%20Herenia%2C%20quiero%20aprovechar%20la%20promo%20del%20viernes%20-%20primer%20mes%20gratis%20en%20RG%2090." class="btn-promo-wa" target="_blank">
             💬 Quiero esta promo
           </a>
@@ -531,6 +607,7 @@
       </div>
 
     </div>
+
     <p class="promo-note reveal">Promociones sujetas a disponibilidad. <strong>Consultá por WhatsApp antes de venir.</strong></p>
   </div>
 </section>
@@ -637,6 +714,7 @@
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
   }
+
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
   });
@@ -648,21 +726,31 @@
       }
     });
   }, { threshold: 0.12 });
+
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   function sendWhatsApp() {
     const nombre   = document.getElementById('fNombre').value.trim();
     const contacto = document.getElementById('fContacto').value.trim();
     const mensaje  = document.getElementById('fMensaje').value.trim();
-    if (!mensaje) { alert('Por favor escribí tu consulta.'); return; }
+
+    if (!mensaje) {
+      alert('Por favor escribí tu consulta.');
+      return;
+    }
+
     const text = encodeURIComponent(
       `Hola Herenia! Me contacto desde la página web.\n\n` +
       (nombre   ? `Nombre: ${nombre}\n`     : '') +
       (contacto ? `Contacto: ${contacto}\n` : '') +
       `\nConsulta: ${mensaje}`
     );
+
     document.getElementById('toast').classList.add('show');
-    setTimeout(() => { window.open(`https://wa.me/595971300059?text=${text}`, '_blank'); }, 600);
+
+    setTimeout(() => {
+      window.open(`https://wa.me/595971300059?text=${text}`, '_blank');
+    }, 600);
   }
 </script>
 </body>
